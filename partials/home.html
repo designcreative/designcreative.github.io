@@ -1,0 +1,15 @@
+	<section class="hero">
+		<div class="row">
+			<div class="twelve columns text-center">
+				<h1>Responsive HTML5 and CSS3 site templates.</h1>
+			</div>
+		</div>
+	</section>
+	
+	<section class="row">
+		<article class="six columns" ng-repeat="template in templates | filter:query | orderBy:orderProp">
+			<a href="/templates/{{template.id}}"><img ng-src="{{template.imageUrl}}" alt="{{template.name}}" /></a>
+			<h2>{{template.name}}</h2>
+			<p>{{template.description}}</p>
+		</article>
+	</section>
