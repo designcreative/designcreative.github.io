@@ -1,13 +1,50 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="dcApp">
 <head>
 	<meta charset="UTF-8" />
 	<title>DesignCreative Free HTML5 Templates</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Responsive HTML5 and CSS3 site templates designed by DesignCreative." />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' />
+	<link rel="stylesheet" href="css/main.css" />
 	
 	<script src="js/libs/angular.js"></script>
+	<script src="js/controllers.js"></script>
 </head>
-<body>
-	<p>Nothing here {{'yet' + '!'}}</p>
+<body ng-controller="TemplatesListCtrl">
+	
+	<header>
+		<div class="row">
+			<div class="four columns">
+				<img src="img/dcfree_logo.png" alt="DesignCreativeFree Logo" />
+			</div>
+			<div class="eight columns">
+				<div class="search-meta">
+					<span>Search:</span> <input ng-model="query" /> |
+					<select ng-model="orderProp">
+						<option value="name">Alphabetical</option>
+						<option value="id">Newest</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<section class="hero">
+		<div class="row">
+			<div class="twelve columns text-center">
+				<h1>Responsive HTML5 and CSS3 site templates.</h1>
+			</div>
+		</div>
+	</section>
+	
+	<section class="row">
+		<article class="six columns" ng-repeat="template in templates | filter:query | orderBy:orderProp">
+			<a href="/templates/{{template.id}}"><img ng-src="{{template.imageUrl}}" alt="{{template.name}}" /></a>
+			<h2>{{template.name}}</h2>
+			<p>{{template.description}}</p>
+		</article>
+	</section>
+	
 </body>
 </html>

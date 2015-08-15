@@ -1,0 +1,14 @@
+[
+	{
+		"id": 1,
+		"name": "Wee",
+		"description": "Description for Wee HTML5 Template",
+		"imageUrl": "img/templates/wee.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Virtue",
+		"description": "Description for Virtue HTML5 Template",
+		"imageUrl": "img/templates/virtue.jpg"
+	}
+]
